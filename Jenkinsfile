@@ -1,6 +1,9 @@
 // Declative
 pipeline {
-    agent { docker { image 'maven:3.6.3'} }
+    agent { docker { image 'maven:3.6.3'
+                     args '-u root:root'
+                     }
+           }
     stages {
         stage('Build') {
             steps {
